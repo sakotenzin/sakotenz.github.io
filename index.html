@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+  index.html
+  sakotenz.github.io
+
+  Created by Vitor Venturin on 07/11/2026.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Under Construction</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --fg: #1c1c1c;
+      --muted: #6b6b6b;
+      --accent: #e0a100;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --fg: #f0f0f0;
+        --muted: #9a9a9a;
+        --accent: #f5b800;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+    }
+    .bar {
+      width: 64px;
+      height: 6px;
+      margin: 0 auto 24px;
+      border-radius: 3px;
+      background: repeating-linear-gradient(45deg, var(--accent) 0 8px, var(--fg) 8px 16px);
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(1.75rem, 5vw, 2.5rem); }
+    p { margin: 0; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="bar" aria-hidden="true"></div>
+    <h1>Site under construction</h1>
+    <p>Something new is coming soon. Check back later.</p>
+  </main>
+</body>
+</html>
