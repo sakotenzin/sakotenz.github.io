@@ -1,0 +1,32 @@
+# Press cards on the home page (4-column grid).
+# url: external link (opens in a new tab) or a site path starting with "/".
+# image/width/height: card image in assets/img. logo*: optional overlay logo.
+
+- url: https://www.vogue.nl/fashion/leger-des-heils-balenciaga/
+  label: Media
+  title: "_'FROM FASHION STUNT TO SOCIAL PROBLEM: SALVATION ARMY RESHARE LAUNCHES COLLECTION OF SHOES FROM HOMELESS PEOPLE' _ VOGUE"
+  image: 512236_00b9e14f5801480b8c994fef39c81afb_c.jpg
+  width: 1343
+  height: 1600
+  logo: 512236_76d99d807ff34b2698416ea441e5ceba.png
+  logo_width: 1920
+  logo_height: 504
+  logo_alt: Vogue
+
+- url: https://www.lbbonline.com/news/hidden-portraits-fights-years-of-vandalism-against-women-in-jerusalem-with-daring-out-of-home-campaign
+  title: "‘HIDDEN PORTRAITS' FIGHTS YEARS OF VANDALISM AGAINST WOMEN IN JERUSALEM WITH DARING OOH CAMPAIGN<br>_ LITTLE BLACK BOOK"
+  image: 512236_4014b485ee1e47eebca7379c61d735db_c.jpg
+  width: 1299
+  height: 1600
+
+- url: https://euronewsgeorgia.com/2023/07/28/faruli-portretebi-cloud-factory-kreatiuli-artdirektori-sako-tvildiani/
+  title: "‘HIDDEN PORTRAITS' FROM CLOUD FACTORY'S<br>SAKO TENZ / TVILDIANI - CONCEPTUAL ART DIRECTOR<br>_ EURONEWS GEORGIA"
+  image: 512236_b281afa7ac84462db92849c0841fedaa_c.jpg
+  width: 1323
+  height: 1600
+
+- url: /truly-destroyed/
+  title: "‘TRULY DESTROYED' PR CAMPAIGN WAS SHORTLISTED IN THREE CATEGORIES ON 2023 CANNES LIONS AWARDS COMPETITION."
+  image: 512236_c0dccdd056b44739b66b8339a6f5fbc9_c.jpg
+  width: 1277
+  height: 1600

@@ -1,0 +1,30 @@
+{%- comment -%}
+  Created by Vitor Venturin on 07/11/2026.
+  Justified media row: every cell gets its aspect ratio, so the row fills the width at equal height.
+
+  Usage in a post (items separated by "|"):
+    {% include row.html media="photo.jpg 1920x1280 | other.webp 839x596 Alt text here | clip.mp4 1920x1080 clipf001.jpg" %}
+
+  Image item:  <file in assets/img> <width>x<height> [alt text...]
+  Video item:  <file.mp4 in assets/video> <width>x<height> <poster file in assets/img>
+{%- endcomment -%}
+<div class="row">
+{%- assign items = include.media | split: "|" -%}
+{%- for raw in items -%}
+{%- assign parts = raw | strip | split: " " -%}
+{%- assign file = parts[0] -%}
+{%- assign dims = parts[1] | split: "x" -%}
+{%- assign w = dims[0] | plus: 0 -%}
+{%- assign h = dims[1] | plus: 0 -%}
+{%- assign ratio = w | times: 1.0 | divided_by: h | round: 4 -%}
+{%- assign ext = file | split: "." | last | downcase -%}
+<div class="cell" style="flex:{{ ratio }} 1 0;aspect-ratio:{{ ratio }}">
+{%- if ext == "mp4" -%}
+<video class="loop" src="{{ file | prepend: '/assets/video/' | relative_url }}" poster="{{ parts[2] | prepend: '/assets/img/' | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
+{%- else -%}
+{%- assign alt = parts | slice: 2, 99 | join: " " -%}
+<img src="{{ file | prepend: '/assets/img/' | relative_url }}" width="{{ w }}" height="{{ h }}" alt="{{ alt | escape }}" loading="lazy" decoding="async">
+{%- endif -%}
+</div>
+{%- endfor -%}
+</div>

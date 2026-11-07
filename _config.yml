@@ -1,0 +1,83 @@
+#
+#  _config.yml
+#  sakotenz.github.io
+#
+#  Created by Vitor Venturin on 07/11/2026.
+#
+
+# Site settings
+title: Sako Tenz
+home_title: "Sako Tenz | art director"
+title_suffix: "Sako Tenz Portfolio"
+tagline: A VERY CONCEPTUAL SR. ART DIRECTOR
+email: sakotvildiani@gmail.com
+description: "Conceptual Art Director Sako (Salome) Tenz portfolio of works in advertising, championing creative activism and purpose driven work, but not forgetting to laugh as well."
+meta_author: Sako Tenz
+
+# url / baseurl are left unset on purpose: GitHub Pages fills them in
+# (jekyll-github-metadata), so the site works both as a project site
+# (/sakotenz.github.io/) and as a user site or custom domain (/).
+# Always link with the `relative_url` filter.
+
+# Home page filter pills (labels only, not clickable yet)
+filters:
+  - PR CAMPAIGN_
+  - ILLUSTRATION_
+  - TVC_
+  - PERSONAL PROJECTS_
+  - BRANDING/ CONCEPT_
+
+# Home page sections, top to bottom.
+# `section`: posts whose front matter `section` matches are listed, sorted by `order`.
+# `data`: cards come from _data/<name>.yml instead of posts.
+# `class`: grid style (big = 2 columns, three = 3 columns, press-grid = 4 columns).
+home_sections:
+  - section: featured
+    class: big
+  - section: work
+    class: three
+  - data: press
+    class: press-grid
+  - section: tedx
+    class: three
+  - section: closing
+    class: big
+
+# Build settings
+markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographic_symbols: { hellip: "...", mdash: "---", ndash: "--", laquo: "<<", raquo: ">>", laquo_space: "<< ", raquo_space: " >>" }
+permalink: pretty
+
+# Posts are projects. Each one is served at /<slug>/ (slug = filename without date),
+# which keeps the old Wix URLs. New posts land in the "work" grid unless told otherwise.
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      permalink: /:title/
+      section: work
+      order: 99
+      link: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CLAUDE.md
+  - build.sh
+  - docs/
