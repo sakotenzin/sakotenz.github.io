@@ -4,7 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository state
 
-GitHub Pages site, not yet built: only `README.md` exists. No build system, package manager, tests, or linter. Update this file once a stack (plain HTML, Jekyll, static generator, etc.) is chosen.
+Plain static HTML/CSS portfolio for art director Sako Tenz, migrated from the Wix site https://sakotvildiani.wixsite.com/my-site-2. No build system, package manager, JS, tests, or linter — edit the HTML files directly.
+
+- `index.html` — home grid of project cards (hand-written card list; looping muted preview videos).
+- `<slug>/index.html` — one folder per page, slugs match the old Wix URLs (`about-sako`, `truly-destroyed`, `hidden-portraits`, `make-room-4-love`, `greenforce`, `tedx-tbilisi-2023-event`, `classic-that-shouldnt-be`, `europebet`). Subpages reference assets with `../`.
+- `assets/css/style.css` — single shared stylesheet (fonts: Space Mono + Barlow from Google Fonts).
+- `assets/img/`, `assets/video/` — media downloaded from Wix CDN, filenames keep Wix media IDs. `*_c.*` = cropped variant matching the Wix framing. Preview videos are 720p MP4; keep every file under GitHub's 100 MB limit.
+- Media rows in project pages use `.row > .cell` with inline `flex`/`aspect-ratio` = image aspect ratio (justified rows).
+- Full-length videos for hidden-portraits, make-room-4-love and truly-destroyed are Vimeo embeds (IDs 831532022, 798723245, 838250301) that are domain-restricted on Vimeo; they only play once the Vimeo owner allows the GitHub Pages domain.
+- All links must stay relative (site is served under a sub-path, see below).
+- File header comment: `Created by Vitor Venturin on DD/MM/YYYY.` — no company/copyright line.
 
 ## GitHub Pages setup
 
