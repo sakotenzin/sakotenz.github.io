@@ -8,8 +8,8 @@ order: 2
 card:
   label: "PR / 2023"
   title: "FOR THE DUTCH SALVATION ARMY. TRULY DESTROYED"
-  video: "512236_4cf930026a9247e6a351eef3f093909d.mp4"
-  poster: "512236_4cf930026a9247e6a351eef3f093909df000.jpg"
+  video: "/assets/video/512236_4cf930026a9247e6a351eef3f093909d.mp4"
+  poster: "/assets/img/512236_4cf930026a9247e6a351eef3f093909df000.jpg"
 ---
 
 {% include vimeo.html id="838250301" %}

@@ -1,0 +1,177 @@
+#
+#  .pages.yml
+#  sakotenz.github.io
+#
+#  Created by Vitor Venturin on 09/11/2026.
+#
+#  Pages CMS config (https://pagescms.org): browser editor for posts, press cards and media.
+#  Edit at https://app.pagescms.org, pick this repo and the `main` branch. Every save is a commit.
+#  Every front matter key must be declared here: on save, Pages CMS rewrites the front matter
+#  from these fields only and drops anything else. Media values are full paths (/assets/img/x.jpg).
+#
+
+media:
+  - name: images
+    label: Images
+    input: assets/img
+    output: /assets/img
+    categories: [image]
+    rename: safe # no spaces: row.html splits media items on spaces
+  - name: videos
+    label: Videos
+    input: assets/video
+    output: /assets/video
+    categories: [video]
+    rename: safe
+
+content:
+  - name: posts
+    label: Projects
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      fields: [title, section, order]
+      primary: title
+      sort: [section, order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: Big title on the project page.
+      - name: page_title
+        label: Browser tab title
+        type: string
+        description: Optional. Text in the browser tab.
+      - name: label
+        label: Label
+        type: string
+        description: Small line above the title, e.g. "OOH / PR".
+      - name: subtitle
+        label: Subtitle
+        type: string
+        description: Optional. Line under the title.
+      - name: description
+        label: Description (for Google / sharing)
+        type: text
+      - name: section
+        label: Home section
+        type: select
+        default: work
+        options:
+          values:
+            - name: featured
+              label: Featured (top, big cards)
+            - name: work
+              label: Work (3 columns)
+            - name: tedx
+              label: TEDx (3 columns)
+            - name: closing
+              label: Closing (bottom, big cards)
+      - name: order
+        label: Order in section
+        type: number
+        description: Smaller number = shown first.
+      - name: link
+        label: Card opens the project page
+        type: boolean
+        default: true
+        description: Turn off while the project page is not written yet.
+      - name: card
+        label: Home card
+        type: object
+        fields:
+          - name: label
+            label: Card label
+            type: string
+            description: Small text above the card, e.g. "OOH / 2023".
+          - name: title
+            label: Card title
+            type: string
+          - name: video
+            label: Preview video
+            type: file
+            options:
+              media: videos
+            description: Looping MP4 (720p). Use either a video + poster, or an image.
+          - name: poster
+            label: Video poster image
+            type: image
+            options:
+              media: images
+          - name: image
+            label: Card image
+            type: image
+            options:
+              media: images
+            description: Used when there is no video.
+          - name: width
+            label: Image width (px)
+            type: number
+          - name: height
+            label: Image height (px)
+            type: number
+          - name: soon
+            label: Show COMING SOON badge
+            type: boolean
+            default: false
+      - name: body
+        label: Page content
+        type: code
+        options:
+          format: markdown
+        description: >-
+          Markdown. Keep the {% include ... %} lines and {: .xxx} lines as they are.
+          Image row: {% include row.html media="a.jpg 1920x1280 | b.jpg 800x600" %}
+          (bare filenames from Media > Images, with their size). Vimeo: {% include vimeo.html id="123" %}.
+
+  - name: press
+    label: Press cards
+    type: file
+    path: _data/press.yml
+    format: yaml
+    list: true
+    fields:
+      - name: url
+        label: Link
+        type: string
+        required: true
+        description: Full https:// link, or a site page like /truly-destroyed/
+      - name: label
+        label: Label
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: image
+        label: Image
+        type: image
+        options:
+          media: images
+      - name: width
+        label: Image width (px)
+        type: number
+      - name: height
+        label: Image height (px)
+        type: number
+      - name: logo
+        label: Overlay logo
+        type: image
+        options:
+          media: images
+      - name: logo_width
+        label: Logo width (px)
+        type: number
+      - name: logo_height
+        label: Logo height (px)
+        type: number
+      - name: logo_alt
+        label: Logo name
+        type: string

@@ -3,6 +3,7 @@
   Home grid card.
   include.card: label, title, and one of
     video + poster        looping preview (files in assets/video, assets/img)
+  File values may be a bare filename or a full /assets/... path (Pages CMS writes the latter).
     image + width/height  still image (assets/img)
   optional: soon (true = "COMING SOON" badge), logo + logo_width/logo_height/logo_alt (overlay logo)
   include.href: link target (omit for a non-clickable card); include.external: open in new tab.
@@ -15,12 +16,12 @@
 {%- endif -%}
 <p class="card-label">{% if c.label and c.label != "" %}{{ c.label | escape }}{% else %}&nbsp;{% endif %}</p><div class="media">
 {%- if c.video -%}
-<video class="loop" src="{{ c.video | prepend: '/assets/video/' | relative_url }}" poster="{{ c.poster | prepend: '/assets/img/' | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
+<video class="loop" src="{{ c.video | remove_first: '/assets/video/' | prepend: '/assets/video/' | relative_url }}" poster="{{ c.poster | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
 {%- elsif c.image -%}
-<img src="{{ c.image | prepend: '/assets/img/' | relative_url }}" width="{{ c.width }}" height="{{ c.height }}" alt="" loading="lazy" decoding="async">
+<img src="{{ c.image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ c.width }}" height="{{ c.height }}" alt="" loading="lazy" decoding="async">
 {%- endif -%}
 {%- if c.logo -%}
-<img src="{{ c.logo | prepend: '/assets/img/' | relative_url }}" width="{{ c.logo_width }}" height="{{ c.logo_height }}" alt="{{ c.logo_alt | escape }}" class="overlay-logo" loading="lazy" decoding="async">
+<img src="{{ c.logo | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ c.logo_width }}" height="{{ c.logo_height }}" alt="{{ c.logo_alt | escape }}" class="overlay-logo" loading="lazy" decoding="async">
 {%- endif -%}
 {%- if c.soon -%}<span class="soon">COMING SOON</span>{%- endif -%}
 </div><h2 class="card-title">{{ c.title }}</h2>

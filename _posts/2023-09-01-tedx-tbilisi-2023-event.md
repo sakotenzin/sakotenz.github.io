@@ -7,8 +7,8 @@ order: 1
 card:
   label: "Conceping & Branding / 2023"
   title: "TedxTbilisi 2023 10th Anniversary// Branding_"
-  video: "512236_916af3b363e643189942bd71beaef00a.mp4"
-  poster: "512236_916af3b363e643189942bd71beaef00af002.jpg"
+  video: "/assets/video/512236_916af3b363e643189942bd71beaef00a.mp4"
+  poster: "/assets/img/512236_916af3b363e643189942bd71beaef00af002.jpg"
 ---
 
 {% include row.html media="512236_058c72345f3b4004ae695bab5dc31f58.mp4 1920x1080 512236_058c72345f3b4004ae695bab5dc31f58f002.jpg" %}

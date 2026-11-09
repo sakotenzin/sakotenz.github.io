@@ -46,5 +46,12 @@ Reference: https://docs.github.com/en/pages/quickstart
 
 - `bundle install`, then `bundle exec jekyll serve` → http://localhost:4000/ (or `./build.sh` for a one-off build into `_site/`, which is git-ignored).
 - To test the sub-path: `bundle exec jekyll serve --baseurl /sakotenz.github.io`.
-- `bundle exec jekyll serve` also enables jekyll-admin at http://localhost:4000/admin for editing posts in a browser.
+- `bundle exec jekyll serve` also enables jekyll-admin at http://localhost:4000/admin for editing posts in a browser. Local only: GitHub Pages serves static files, so `/admin` does not exist on the live site.
+
+## Online editing (Pages CMS)
+
+- Sako edits online at https://app.pagescms.org (GitHub login), branch `main`. Config: `.pages.yml` (projects collection, `_data/press.yml`, media folders `assets/img` + `assets/video`).
+- Front matter media values (`card.video/poster/image`, press `image/logo`) must be full paths (`/assets/img/x.jpg`, `/assets/video/x.mp4`): Pages CMS refuses to save a post whose image value doesn't start with the media folder. `card.html`/`head.html` strip the prefix before adding their own, so bare filenames also render. Media inside the body (`row.html`, `player.html`) stays bare filenames.
+- Post body uses the raw markdown code editor (not rich-text) so `{% include %}` and `{: .class}` lines survive saves.
+- On save Pages CMS rewrites front matter from the `.pages.yml` fields only and drops undeclared keys (no `settings.content.merge`, so clearing a field works). When adding a front matter key, declare it in `.pages.yml` too. It also re-serializes the YAML, so quoting/comments in front matter and `_data/press.yml` can change.
 - Restart `jekyll serve` after editing `_config.yml`.

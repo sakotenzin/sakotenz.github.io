@@ -8,8 +8,8 @@ order: 4
 card:
   label: "TVC / 2023"
   title: "GREENFORCE GERMANY // ECO-ANXIETY_"
-  video: "512236_088d4f700ebd4f6a8992d649b518ad0f.mp4"
-  poster: "512236_088d4f700ebd4f6a8992d649b518ad0ff000.jpg"
+  video: "/assets/video/512236_088d4f700ebd4f6a8992d649b518ad0f.mp4"
+  poster: "/assets/img/512236_088d4f700ebd4f6a8992d649b518ad0ff000.jpg"
 ---
 
 {% include player.html src="512236_f03c1a973dda4663bb51e3ddf2b4e8ee.mp4" %}

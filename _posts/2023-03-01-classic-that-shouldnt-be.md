@@ -7,8 +7,8 @@ order: 1
 card:
   label: "Illustration / Print 2023"
   title: "THE CLASSIC THAT SHOULDN'T BE'FOR AWARDS_ PERSONAL PROJECT"
-  video: "512236_f73e3604cbc146268083882313ee02cd.mp4"
-  poster: "512236_f73e3604cbc146268083882313ee02cdf000.jpg"
+  video: "/assets/video/512236_f73e3604cbc146268083882313ee02cd.mp4"
+  poster: "/assets/img/512236_f73e3604cbc146268083882313ee02cdf000.jpg"
 ---
 
 {% include row.html media="512236_e70a6ad1ba0841bf86fb497c374a40fa.mp4 1920x1080 512236_e70a6ad1ba0841bf86fb497c374a40faf001.jpg" %}

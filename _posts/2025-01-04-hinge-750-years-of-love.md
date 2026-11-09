@@ -7,7 +7,7 @@ link: false
 card:
   label: "PRINT/2025"
   title: "Hinge X 750 Years of Love In Amsterdam // Print_"
-  image: "512236_2b587b2b07cc41a7a3e2465443a69cfc_c.jpg"
+  image: "/assets/img/512236_2b587b2b07cc41a7a3e2465443a69cfc_c.jpg"
   width: 1600
   height: 901
 ---

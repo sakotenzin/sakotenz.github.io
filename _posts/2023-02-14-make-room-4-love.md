@@ -8,8 +8,8 @@ order: 5
 card:
   label: "Digital Activation / 2023"
   title: "THE DUTCH SALVATION ARMY X RESHARE STORE //'MAKE ROOM 4 LOVE"
-  video: "512236_8b946cddc4f2405295d945f45af2935a.mp4"
-  poster: "512236_8b946cddc4f2405295d945f45af2935af000.jpg"
+  video: "/assets/video/512236_8b946cddc4f2405295d945f45af2935a.mp4"
+  poster: "/assets/img/512236_8b946cddc4f2405295d945f45af2935af000.jpg"
 ---
 
 {% include vimeo.html id="798723245" %}

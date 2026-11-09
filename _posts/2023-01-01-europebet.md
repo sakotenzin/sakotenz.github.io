@@ -7,8 +7,8 @@ order: 2
 card:
   label: "TV Live / 2023"
   title: "FOR EUROPEBET VR TV LOTTERY"
-  video: "512236_7a56de32d61244abae56392abfb3952b.mp4"
-  poster: "512236_7a56de32d61244abae56392abfb3952bf000.jpg"
+  video: "/assets/video/512236_7a56de32d61244abae56392abfb3952b.mp4"
+  poster: "/assets/img/512236_7a56de32d61244abae56392abfb3952bf000.jpg"
 ---
 
 {% include row.html media="512236_7a56de32d61244abae56392abfb3952b.mp4 1920x1080 512236_7a56de32d61244abae56392abfb3952bf000.jpg" %}

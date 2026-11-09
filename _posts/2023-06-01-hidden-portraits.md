@@ -8,8 +8,8 @@ order: 1
 card:
   label: "OOH / 2023"
   title: "FOR JCDecaux AND ISRAEL WOMEN'S NETWORK. 'HIDDEN PORTRAITS'"
-  video: "512236_ffeb678e86b846d98e9d9e504b389912.mp4"
-  poster: "512236_ffeb678e86b846d98e9d9e504b389912f001.jpg"
+  video: "/assets/video/512236_ffeb678e86b846d98e9d9e504b389912.mp4"
+  poster: "/assets/img/512236_ffeb678e86b846d98e9d9e504b389912f001.jpg"
 ---
 
 {% include vimeo.html id="831532022" %}
