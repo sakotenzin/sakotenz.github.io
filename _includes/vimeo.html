@@ -1,0 +1,6 @@
+{%- comment -%}
+  Created by Vitor Venturin on 07/11/2026.
+  Full-width Vimeo player. Usage: {% include vimeo.html id="831532022" %}
+  Note: domain-restricted Vimeo videos only play once the owner allows this site's domain.
+{%- endcomment -%}
+<div class="player"><iframe src="https://player.vimeo.com/video/{{ include.id }}?dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Video"></iframe></div>

@@ -1,0 +1,26 @@
+{%- comment -%} Created by Vitor Venturin on 07/11/2026. {%- endcomment -%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.url == "/" %}
+<title>{{ site.home_title }}</title>
+{%- else %}
+<title>{{ page.page_title | default: page.title }} | {{ site.title_suffix }}</title>
+{%- endif %}
+{%- assign desc = page.description | default: site.description %}
+{%- if page.url == "/" or page.description %}
+<meta name="description" content="{{ desc | strip_html | escape }}">
+{%- endif %}
+<meta name="author" content="{{ site.meta_author }}">
+<meta property="og:title" content="{{ page.page_title | default: page.title | default: site.home_title | escape }}">
+<meta property="og:description" content="{{ desc | strip_html | escape }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- if page.card.poster or page.card.image %}
+<meta property="og:image" content="{{ page.card.poster | default: page.card.image | remove_first: '/assets/img/' | prepend: '/assets/img/' | absolute_url }}">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>

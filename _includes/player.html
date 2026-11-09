@@ -1,0 +1,5 @@
+{%- comment -%}
+  Created by Vitor Venturin on 07/11/2026.
+  Full-width video with controls. Usage: {% include player.html src="file.mp4" %} (file in assets/video)
+{%- endcomment -%}
+<div class="player"><video src="{{ include.src | prepend: '/assets/video/' | relative_url }}" controls playsinline preload="metadata"></video></div>

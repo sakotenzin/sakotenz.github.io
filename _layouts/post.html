@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{%- comment -%}
+  Created by Vitor Venturin on 07/11/2026.
+  Project page. Front matter: label, title, subtitle (optional). Body = post content.
+{%- endcomment -%}
+<article class="project">
+<p class="label">{{ page.label }}</p><h1 class="title">{{ page.title }}</h1>{% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+{{ content }}
+<a class="pill back" href="{{ '/' | relative_url }}">GO BACK_</a>
+</article>
