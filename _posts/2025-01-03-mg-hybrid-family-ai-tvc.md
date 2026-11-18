@@ -1,9 +1,7 @@
 ---
 title: "MG Hybrid+ FAMILY range // AI TVC"
 label: "TVC/2025"
-section: work
-order: 6
-link: false
+order: 80
 card:
   label: "TVC/2025"
   title: "MG Hybrid+ FAMILY range // AI TVC_"

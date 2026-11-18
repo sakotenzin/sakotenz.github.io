@@ -1,9 +1,7 @@
 ---
 title: "Hinge X 750 Years of Love In Amsterdam // Print"
 label: "PRINT/2025"
-section: work
-order: 7
-link: false
+order: 90
 card:
   label: "PRINT/2025"
   title: "Hinge X 750 Years of Love In Amsterdam // Print_"

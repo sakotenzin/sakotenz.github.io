@@ -1,9 +1,7 @@
 ---
 title: "ESOT Congress in Prague 2026 // Branding"
 label: "BRANDING/2026"
-section: work
-order: 8
-link: false
+order: 100
 card:
   label: "BRANDING/2026"
   title: "ESOT Congress in Prague 2026 // Branding_"

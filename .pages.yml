@@ -34,9 +34,9 @@ content:
       template: "{year}-{month}-{day}-{primary}.md"
       field: false # hidden: built from the title on save, so a post never gets an empty slug (URL / would overwrite the home page)
     view:
-      fields: [title, section, order]
+      fields: [title, order]
       primary: title
-      sort: [section, order, title]
+      sort: [order, title]
       default:
         sort: order
         order: asc
@@ -61,29 +61,10 @@ content:
       - name: description
         label: Description (for Google / sharing)
         type: text
-      - name: section
-        label: Home section
-        type: select
-        default: work
-        options:
-          values:
-            - name: featured
-              label: Featured (top, big cards)
-            - name: work
-              label: Work (3 columns)
-            - name: tedx
-              label: TEDx (3 columns)
-            - name: closing
-              label: Closing (bottom, big cards)
       - name: order
-        label: Order in section
+        label: Order on home page
         type: number
-        description: Smaller number = shown first.
-      - name: link
-        label: Card opens the project page
-        type: boolean
-        default: true
-        description: Turn off while the project page is not written yet.
+        description: Smaller number = shown first. Projects use steps of 10 (10, 20, 30...) so a new one can go in between (e.g. 25). Empty = last.
       - name: card
         label: Home card
         type: object

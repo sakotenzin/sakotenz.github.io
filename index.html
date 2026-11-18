@@ -2,14 +2,19 @@
 layout: default
 ---
 {%- comment -%}
-  Home grid. Sections come from `home_sections` in _config.yml; cards from _posts (or _data).
+  Home page: one grid with every post (same size, sorted by `order`, all clickable), then the press cards from _data/press.yml.
 {%- endcomment -%}
 <h1 class="view-all">_VIEW ALL</h1>
 <nav class="filters">{% for f in site.filters %}<span class="pill">{{ f }}</span>{% endfor %}</nav>
-{%- for s in site.home_sections %}
-<section class="grid {{ s.class }}">
-{%- if s.data %}
-{%- for item in site.data[s.data] %}
+<section class="grid big">
+{%- assign posts = site.posts | sort: "order" %}
+{%- for post in posts %}
+{%- assign href = post.url | relative_url %}
+{% include card.html card=post.card href=href title=post.title label=post.label %}
+{%- endfor %}
+</section>
+<section class="grid press-grid">
+{%- for item in site.data.press %}
 {%- assign first = item.url | slice: 0 %}
 {%- if first == "/" %}
 {%- assign href = item.url | relative_url %}
@@ -18,16 +23,4 @@ layout: default
 {% include card.html card=item href=item.url external=true %}
 {%- endif %}
 {%- endfor %}
-{%- else %}
-{%- assign posts = site.posts | where: "section", s.section | sort: "order" %}
-{%- for post in posts %}
-{%- if post.link %}
-{%- assign href = post.url | relative_url %}
-{% include card.html card=post.card href=href title=post.title label=post.label %}
-{%- else %}
-{% include card.html card=post.card title=post.title label=post.label %}
-{%- endif %}
-{%- endfor %}
-{%- endif %}
 </section>
-{%- endfor %}
