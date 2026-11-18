@@ -1,16 +1,14 @@
 ---
 title: "Van Leer Foundation: Parent Tech Launch"
-label: PR / DIGITAL ACTIVATION / REAL LIVE MARKETING
-subtitle: The Dutch Salvation Army
+label: SOCIAL CONTENT / TVC
+subtitle: Van Leer Foundation
 hidden: true
 card:
-  label: PR / 2023
+  label: SOCIAL CONTENT/ TVC / 2026
   title: "Van Leer Foundation: Parent Tech Launch"
-  video: /assets/video/512236_4cf930026a9247e6a351eef3f093909d.mp4
-  poster: /assets/img/512236_4cf930026a9247e6a351eef3f093909df000.jpg
   soon: false
 ---
-https://www.youtube.com/watch?v=5hvWmroD1x4
+https://www.youtube.com/watch?v=ZVIRxXQ-PzA
 
 <div class="stats"><div><b>0</b><span>MEDIA INVESTMENT</span></div><div><b>+18M</b><span>IMPRESSIONS</span></div><div><b>+1.1M</b><span>EARNED MEDIA</span></div></div>
 
@@ -21,22 +19,7 @@ When Balenciaga released a limited edition series of destroyed-looking sneakers,
 
 ‘Truly Destroyed’ is a non profit project created by Cloudfactory for The Dutch Salvation Army together with fashion photographer Carli Hermès.
 
-- Cannes Lions Awards 2023 - PR- Shortlist
-- Cannes Lions Awards 2023 - PR- Shortlist
-- Cannes Lions Awards 2023 - Brand Experience and Activation - Shortlist
-- Merit Award 2023 One Show
-- Clio Awards 2023 - Real Time Response - Silver
-- Clio Awards 2023 - Use of Fashion & Beauty - Silver
-- Clio Awards 2023 - Cause Related - Bronze
-- The One Show 2023 - Innovation in PR - Shortlist
-- The One Show 2023 - Digital & Online - Shortlist
-- The One Show 2023 - Current Event Response - Shortlist
-- PHNX Awards 2023 - Business Activation - Shortlist
-- Eurobest Awards 2022 - Business Activation - Bronze
-- Eurobest Awards 2022 PR - Shortlist
-- ADCN The Dutch Creativity awards 2022 - PR - Silver
-- ADCN The Dutch Creativity awards 2022 - Business and Activation - Silver
-{: .awards}
+
 
 {% include row.html media="512236_09b36efe8e634a8283646804dfb155c0.jpg 1920x1342 | 512236_0c002892c62d44dc8b8a7e7a44b94eb5.jpg 1920x1343 | 512236_4deab7c95f2245379dd88feb309c6f9e.jpg 1920x1342 | 512236_2abacfa08695443cad8c2728629e0f30.jpg 1920x1342" %}
 
