@@ -24,7 +24,7 @@ kramdown:
 permalink: pretty
 
 # Posts are projects. Each one is served at /<slug>/ (slug = filename without date),
-# which keeps the old Wix URLs. The home grid sorts posts by `order`; posts without one go last.
+# which keeps the old Wix URLs. Home grid order: _data/grid.yml.
 defaults:
   - scope:
       path: ""
@@ -32,7 +32,6 @@ defaults:
     values:
       layout: post
       permalink: /:title/
-      order: 999
 
 # Plugins
 plugins:

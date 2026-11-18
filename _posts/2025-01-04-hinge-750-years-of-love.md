@@ -1,7 +1,6 @@
 ---
 title: Hinge X 750 Years of Love In Amsterdam // Print
 label: PRINT/2025
-order: 90
 hidden: true
 card:
   label: PRINT/2025
@@ -11,4 +10,4 @@ card:
   height: 901
   soon: false
 ---
-<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+<!-- Project page not written yet. Add the story here. -->

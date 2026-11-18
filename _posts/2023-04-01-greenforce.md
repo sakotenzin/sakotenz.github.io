@@ -3,7 +3,6 @@ title: "SILENCE YOUR ECO-ANXIETY"
 page_title: "GREENFORCE"
 label: "TVC"
 subtitle: "GreenForce"
-order: 60
 card:
   label: "TVC / 2023"
   title: "GREENFORCE GERMANY // ECO-ANXIETY_"

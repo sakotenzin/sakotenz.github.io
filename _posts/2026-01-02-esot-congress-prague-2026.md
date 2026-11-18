@@ -1,7 +1,6 @@
 ---
 title: "ESOT Congress in Prague 2026 // Branding"
 label: "BRANDING/2026"
-order: 100
 card:
   label: "BRANDING/2026"
   title: "ESOT Congress in Prague 2026 // Branding_"
@@ -9,4 +8,4 @@ card:
   poster: "/assets/img/512236_19466383265f49ecb77feb334b847f79f000.jpg"
 ---
 
-<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+<!-- Project page not written yet. Add the story here. -->

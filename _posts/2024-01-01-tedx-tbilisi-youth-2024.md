@@ -1,7 +1,6 @@
 ---
 title: "TedxTbilisi Youth 2024 // Branding"
 label: "Conceping & Branding / 2024"
-order: 120
 card:
   label: "Conceping & Branding / 2024"
   title: "TedxTbilisi Youth 2024 // Branding_"
@@ -10,4 +9,4 @@ card:
   soon: true
 ---
 
-<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+<!-- Project page not written yet. Add the story here. -->

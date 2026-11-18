@@ -32,7 +32,6 @@ description: >2-
 
   A product made for those who play deserved an introduction they could play
   too.
-order: 30
 card:
   label: "Interactive campaign / Online game / Real-world quest / 2026  "
   title: ASUS ROG X KOJIMA PRODUCTION_
@@ -52,4 +51,4 @@ For the selected winner, the adventure continued beyond the screen. A real-world
 
 Connecting a digital challenge with a physical adventure, the campaign gave fans a way to participate in the collaboration’s spirit of play, curiosity and discovery.
 
-A product made for those who play deserved an introduction they could play too.<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+A product made for those who play deserved an introduction they could play too.<!-- Project page not written yet. Add the story here. -->

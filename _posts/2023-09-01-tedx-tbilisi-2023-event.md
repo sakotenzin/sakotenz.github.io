@@ -2,7 +2,6 @@
 title: "TEDxTBILISI 10 YEARS"
 page_title: "TEDX"
 label: "EVENT/ CONCEPT & DESIGN"
-order: 110
 card:
   label: "Conceping & Branding / 2023"
   title: "TedxTbilisi 2023 10th Anniversary// Branding_"

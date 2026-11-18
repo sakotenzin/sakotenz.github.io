@@ -3,7 +3,6 @@ title: "MAKE ROOM 4 LOVE"
 page_title: "MAKE ROOM 4 LOVE"
 label: "PR / DIGITAL ACTIVATION / SOCIAL"
 description: "Make room for love is a creative activation for Valentine's Day in Netherlands, powered by The Salvation Army. Narrating, how important is the space in love"
-order: 70
 card:
   label: "Digital Activation / 2023"
   title: "THE DUTCH SALVATION ARMY X RESHARE STORE //'MAKE ROOM 4 LOVE"

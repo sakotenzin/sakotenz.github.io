@@ -3,7 +3,6 @@ title: "'Hidden Portraits'"
 page_title: "HIDDEN PORTRAITS"
 label: "OOH / REAL TIME MARKETING / PR"
 subtitle: "Israel Women's Network X JCDecaux Israel"
-order: 10
 card:
   label: "OOH / 2023"
   title: "FOR JCDecaux AND ISRAEL WOMEN'S NETWORK. 'HIDDEN PORTRAITS'"
