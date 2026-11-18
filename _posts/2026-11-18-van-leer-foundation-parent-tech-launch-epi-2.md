@@ -2,14 +2,14 @@
 title: "Van Leer Foundation: Parent Tech Launch EPI 2"
 label: SOCIAL CONTENT / TVC
 subtitle: Van Leer Foundation
-hidden: true
+hidden: false
 card:
   label: SOCIAL CONTENT/ TVC / 2026
   title: "Van Leer Foundation: Parent Tech Launch EPI 2"
-  video: /assets/video/vlf.mp4
+  video: /assets/video/vlf-2.mp4
   soon: false
 ---
-https://www.youtube.com/watch?v=ZVIRxXQ-PzA
+https://www.youtube.com/watch?v=A0oGFjBHhzk
 
 In a world full of tech launches, AI breakthroughs and promises of the next big thing, Van Leer Foundation came to us with a different kind of challenge: How could they bring more attention to child development in a new way? What could they do that they hadn’t done before?
 
