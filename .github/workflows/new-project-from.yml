@@ -1,0 +1,59 @@
+#
+#  new-project-from.yml
+#  sakotenz.github.io
+#
+#  Created by Vitor Venturin on 18/11/2026.
+#
+#  "New project from this" button in Pages CMS (.pages.yml, posts collection, entry action).
+#  Copies the open project to a new post with the title typed in the dialog, then commits
+#  it to the branch open in Pages CMS. Logic: .github/scripts/new_project_from.py.
+#
+
+name: New project from this
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pages: write # request a Pages build: pushes made with GITHUB_TOKEN don't start one
+
+concurrency:
+  group: new-project-from
+  cancel-in-progress: false
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create the new post
+        id: copy
+        env:
+          PAYLOAD: ${{ inputs.payload }}
+        run: |
+          target=$(python3 .github/scripts/new_project_from.py | tail -n 1)
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        env:
+          TARGET: ${{ steps.copy.outputs.target }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$TARGET"
+          git commit -m "Create $TARGET (copy via Pages CMS)"
+          git pull --rebase
+          git push
+          echo "Created $TARGET" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rebuild the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "::warning::Could not request a Pages build; the next save will publish the copy."
