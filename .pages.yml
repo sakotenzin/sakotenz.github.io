@@ -247,10 +247,29 @@ content:
       - name: hero_height
         label: Top photo height (px)
         type: number
+      - name: hero_focus
+        label: Face position in photo
+        type: select
+        default: upper
+        description: The photo is cropped to a square on the left of the header. Pick where the face is.
+        options:
+          values:
+            - name: top
+              label: Top
+            - name: upper
+              label: Upper (default)
+            - name: center
+              label: Center
+            - name: lower
+              label: Lower
       - name: hero_name
-        label: Name on the top photo
+        label: Name (next to the top photo)
         type: text
         description: One line per row.
+      - name: bio
+        label: Bio (under the name)
+        type: text
+        description: Short description. Leave an empty line between paragraphs. **bold** and *italic* work.
       - name: location
         label: Location
         type: text

@@ -2,11 +2,14 @@ page_title: ABOUT_
 description: "Sako Tenz is a Georgian Conceptual Art Director, currently based
   in Amsterdam, NL. "
 hero_image: /assets/img/img-20260925-wa0007.jpg
-hero_width: 1920
-hero_height: 1279
+hero_width: 1200
+hero_height: 1600
+hero_focus: upper
 hero_name: |-
   SAKO TENZ /
   TVILDIANI_
+bio: Sako Tenz is a Georgian Conceptual Art Director, currently based in
+  Amsterdam, NL.
 location: |-
   Amsterdam NL
   Berlin DE / Tbilisi GE
