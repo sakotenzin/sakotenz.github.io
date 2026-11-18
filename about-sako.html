@@ -15,25 +15,35 @@ data_file: about
     {%- endif %}
   </div>
 </div>
+{%- assign has_exp = false -%}{%- if a.experience.size > 0 -%}{%- assign has_exp = true -%}{%- endif -%}
+{%- assign has_trophy = false -%}{%- if a.trophy_image and a.trophy_image != "" -%}{%- assign has_trophy = true -%}{%- endif -%}
+{%- if has_exp or has_trophy %}
 <section class="cols">
   <div>
-    <h2 class="section-label">{{ a.experience_title }}</h2>
+    {%- if has_exp %}
+    {%- if a.experience_title and a.experience_title != "" %}<h2 class="section-label">{{ a.experience_title }}</h2>{% endif %}
     <ul class="experience">{% for e in a.experience %}<li><span class="when">{{ e.when | escape }}</span><span class="where">{{ e.where | escape | newline_to_br }}</span></li>{% endfor %}</ul>
+    {%- endif %}
   </div>
   <div>
-    {%- if a.trophy_image and a.trophy_image != "" %}
-    <figure class="trophy"><img src="{{ a.trophy_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.trophy_width }}" height="{{ a.trophy_height }}" alt="{{ site.data.settings.author | escape }} with awards" loading="lazy" decoding="async"><figcaption>{{ a.trophy_caption | escape }}</figcaption></figure>
+    {%- if has_trophy %}
+    <figure class="trophy"><img src="{{ a.trophy_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.trophy_width }}" height="{{ a.trophy_height }}" alt="{{ site.data.settings.author | escape }} with awards" loading="lazy" decoding="async">{% if a.trophy_caption and a.trophy_caption != "" %}<figcaption>{{ a.trophy_caption | escape }}</figcaption>{% endif %}</figure>
     {%- endif %}
   </div>
 </section>
+{%- endif %}
+{%- if a.awards.size > 0 or a.other_awards.size > 0 %}
 <section class="awards-band">
+  {%- if a.awards.size > 0 %}
   <h2 class="section-label">{{ a.awards_title }}</h2>
   <ul class="awards plain">{% for w in a.awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
+  {%- endif %}
   {%- if a.other_awards.size > 0 %}
   <h3 class="section-label small">{{ a.other_awards_title }}</h3>
   <ul class="awards plain">{% for w in a.other_awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
   {%- endif %}
 </section>
+{%- endif %}
 {%- if a.bottom_image and a.bottom_image != "" %}
 <div class="strip"><img src="{{ a.bottom_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.bottom_width }}" height="{{ a.bottom_height }}" alt="" loading="lazy" decoding="async"></div>
 {%- endif %}
