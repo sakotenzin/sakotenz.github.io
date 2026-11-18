@@ -10,11 +10,9 @@ card:
   soon: false
 ---
 <!-- Project page not written yet. Add the story here. -->
-
 https://www.youtube.com/watch?v=O--ouLsI5Wk
 
 Your next great escape starts with a game.
-
 People travel to escape the everyday. Gamers do it every time they play. ROG Travel brings those two worlds together through a fictional travel agency selling adventures only gaming can offer.
 
 For this instalment, we introduced Gamping: a departure from the comfortable promises of glamping into something a little wilder.
