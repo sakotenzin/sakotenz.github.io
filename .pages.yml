@@ -271,18 +271,13 @@ content:
         type: text
         description: Short description. Leave an empty line between paragraphs. **bold** and *italic* work.
       - name: location
-        label: Location
+        label: Signature - location
         type: text
-        description: One line per row.
+        description: Signature at the end of the text next to the photo. One line per row. The email under it is "Contact email" in Site settings.
       - name: linkedin
-        label: LinkedIn link
+        label: Signature - LinkedIn link
         type: string
-        description: Leave empty to hide the LinkedIn icon.
-      - name: linkedin_icon
-        label: LinkedIn icon
-        type: image
-        options:
-          media: images
+        description: Shown as a "LinkedIn" link. Leave empty to hide it.
       - name: experience_title
         label: Work experience heading
         type: string
@@ -315,6 +310,7 @@ content:
       - name: awards_title
         label: Awards heading
         type: string
+        description: Awards are listed under the bio, next to the photo.
       - name: awards
         label: Awards
         type: string
