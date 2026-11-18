@@ -11,6 +11,9 @@
 {%- if page.url == "/" or page.description %}
 <meta name="description" content="{{ desc | strip_html | escape }}">
 {%- endif %}
+{%- if page.hidden %}
+<meta name="robots" content="noindex">
+{%- endif %}
 <meta name="author" content="{{ site.meta_author }}">
 <meta property="og:title" content="{{ page.page_title | default: page.title | default: site.home_title | escape }}">
 <meta property="og:description" content="{{ desc | strip_html | escape }}">

@@ -4,5 +4,5 @@
   <a class="pill" href="{{ '/about-sako/' | relative_url }}">ABOUT_</a>
 </header>
 {%- if page.url == "/" %}
-<div class="tagline">{{ site.tagline }}</div>
+<div class="tagline">{{ site.data.settings.tagline }}</div>
 {%- endif %}

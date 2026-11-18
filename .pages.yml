@@ -65,6 +65,11 @@ content:
         label: Order on home page
         type: number
         description: Smaller number = shown first. Projects use steps of 10 (10, 20, 30...) so a new one can go in between (e.g. 25). Empty = last.
+      - name: hidden
+        label: Hide from home page
+        type: boolean
+        default: false
+        description: The card leaves the home grid and Google stops indexing the page. The project is kept, and its link still works for previews.
       - name: card
         label: Home card
         type: object
@@ -156,3 +161,14 @@ content:
       - name: logo_alt
         label: Logo name
         type: string
+
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - name: tagline
+        label: Tagline (band under the logo)
+        type: string
+        description: Shown on every page, e.g. "A VERY CONCEPTUAL SR. ART DIRECTOR".
