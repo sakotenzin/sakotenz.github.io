@@ -3,9 +3,6 @@ title: "ASUS ROG × KOJIMA PRODUCTIONS  "
 label: "Interactive campaign / Online game / Real-world quest / 2026  "
 subtitle: DARE TO BE A TRUE LUDENS_
 description: >-
-  https://www.youtube.com/watch?v=H777CldD__k&t=46s
-
-
   A gaming prize. With a campaign you had to play.
 
   For the launch of the ROG Flow Z13-KJP, we invited fans to step inside the
@@ -43,8 +40,9 @@ card:
   poster: /assets/img/512236_c5875f7fc5394d93b1c6c493f96a7b1af000.jpg
   soon: false
 ---
- **A gaming prize. With a campaign you had to play.**
+https://www.youtube.com/watch?v=H777CldD__k&t=46s
 
+A gaming prize. With a campaign you had to play.
 For the launch of the ROG Flow Z13-KJP, we invited fans to step inside the collaboration through a dedicated online game inspired by Kojima Productions’ world of Ludens.
 
 The experience turned exploration into the entry mechanic. Inside a virtual room filled with artwork, objects and clues, players tested their observation, knowledge and creativity through a series of interactive challenges. Completing the game unlocked the chance to win the limited-edition device.
