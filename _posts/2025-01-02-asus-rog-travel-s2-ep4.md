@@ -17,6 +17,8 @@ People travel to escape the everyday. Gamers do it every time they play. ROG Tra
 
 For this instalment, we introduced Gamping: a departure from the comfortable promises of glamping into something a little wilder.
 
+https://www.youtube.com/watch?v=cw25uIjcxNs
+
 Starring Ned Luke and Roger Clark, the film plays with the language of holiday advertising and the appeal of an untamed frontier. The invitation is familiar—leave your routine behind, explore somewhere new—but the pitch comes with a distinctly gamer-minded sense of humour.
 
 The casting makes that connection immediate. Two recognisable performers from gaming culture bring the travel-agency world to life, turning the promise of escape into entertainment for the audience it was made for.
