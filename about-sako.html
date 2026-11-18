@@ -5,7 +5,21 @@ data_file: about
 ---
 {%- assign a = site.data.about -%}
 <article class="about">
-<div class="hero"><img src="{{ a.hero_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.hero_width }}" height="{{ a.hero_height }}" alt="{{ site.data.settings.author | escape }}" decoding="async"><h1 class="hero-name">{{ a.hero_name | escape | newline_to_br }}</h1></div>
+{%- case a.hero_focus -%}
+  {%- when "top" -%}{%- assign focus = "10%" -%}
+  {%- when "center" -%}{%- assign focus = "50%" -%}
+  {%- when "lower" -%}{%- assign focus = "75%" -%}
+  {%- else -%}{%- assign focus = "25%" -%}
+{%- endcase %}
+<div class="hero">
+  <div class="hero-photo"><img src="{{ a.hero_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.hero_width }}" height="{{ a.hero_height }}" alt="{{ site.data.settings.author | escape }}" style="object-position: 50% {{ focus }}" decoding="async"></div>
+  <div class="hero-text">
+    <h1 class="hero-name">{{ a.hero_name | escape | newline_to_br }}</h1>
+    {%- if a.bio and a.bio != "" %}
+    <div class="hero-bio">{{ a.bio | markdownify }}</div>
+    {%- endif %}
+  </div>
+</div>
 <div class="about-head">
   <div class="contact">
     <p>{{ a.location | escape | newline_to_br }}</p>
