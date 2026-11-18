@@ -156,3 +156,14 @@ content:
       - name: logo_alt
         label: Logo name
         type: string
+
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - name: tagline
+        label: Tagline (band under the logo)
+        type: string
+        description: Shown on every page, e.g. "A VERY CONCEPTUAL SR. ART DIRECTOR".
