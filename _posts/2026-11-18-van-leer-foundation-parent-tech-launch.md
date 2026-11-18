@@ -6,6 +6,7 @@ hidden: true
 card:
   label: SOCIAL CONTENT/ TVC / 2026
   title: "Van Leer Foundation: Parent Tech Launch"
+  video: /assets/video/vlf.mp4
   soon: false
 ---
 https://www.youtube.com/watch?v=ZVIRxXQ-PzA
