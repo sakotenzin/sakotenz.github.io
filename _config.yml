@@ -5,26 +5,16 @@
 #  Created by Vitor Venturin on 07/11/2026.
 #
 
-# Site settings
+# Site name and description for the RSS feed only (without `description`, jekyll-github-metadata
+# tries to fetch one from the GitHub API). Every text shown on the site (tab titles, description,
+# email, tagline, tags, button labels) is in _data/settings.yml, editable in Pages CMS.
 title: Sako Tenz
-home_title: "Sako Tenz | art director"
-title_suffix: "Sako Tenz Portfolio"
-email: sakotvildiani@gmail.com
 description: "Conceptual Art Director Sako (Salome) Tenz portfolio of works in advertising, championing creative activism and purpose driven work, but not forgetting to laugh as well."
-meta_author: Sako Tenz
 
 # url / baseurl are left unset on purpose: GitHub Pages fills them in
 # (jekyll-github-metadata), so the site works both as a project site
 # (/sakotenz.github.io/) and as a user site or custom domain (/).
 # Always link with the `relative_url` filter.
-
-# Home page filter pills (labels only, not clickable yet)
-filters:
-  - PR CAMPAIGN_
-  - ILLUSTRATION_
-  - TVC_
-  - PERSONAL PROJECTS_
-  - BRANDING/ CONCEPT_
 
 # Build settings
 markdown: kramdown

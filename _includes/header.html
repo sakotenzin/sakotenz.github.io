@@ -1,7 +1,7 @@
 {%- comment -%} Created by Vitor Venturin on 07/11/2026. {%- endcomment -%}
 <header class="top">
-  <a class="logo" href="{{ '/' | relative_url }}">SAKOTENZ_</a>
-  <a class="pill" href="{{ '/about-sako/' | relative_url }}">ABOUT_</a>
+  <a class="logo" href="{{ '/' | relative_url }}">{{ site.data.settings.logo }}</a>
+  <a class="pill" href="{{ '/about-sako/' | relative_url }}">{{ site.data.settings.about_button }}</a>
 </header>
 {%- if page.url == "/" %}
 <div class="tagline">{{ site.data.settings.tagline }}</div>

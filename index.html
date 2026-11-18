@@ -4,8 +4,8 @@ layout: default
 {%- comment -%}
   Home page: one grid with every post except `hidden: true` ones (same size, sorted by `order`, all clickable), then the press cards from _data/press.yml.
 {%- endcomment -%}
-<h1 class="view-all">_VIEW ALL</h1>
-<nav class="filters">{% for f in site.filters %}<span class="pill">{{ f }}</span>{% endfor %}</nav>
+<h1 class="view-all">{{ site.data.settings.view_all }}</h1>
+<nav class="filters">{% for f in site.data.settings.tags %}<span class="pill">{{ f }}</span>{% endfor %}</nav>
 <section class="grid big">
 {%- assign posts = site.posts | where_exp: "p", "p.hidden != true" | sort: "order" %}
 {%- for post in posts %}
