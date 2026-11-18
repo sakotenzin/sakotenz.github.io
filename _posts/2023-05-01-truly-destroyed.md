@@ -1,16 +1,17 @@
 ---
 title: "'TRULY DESTROYED'"
-page_title: "TRULY DESTROYED"
-label: "PR / DIGITAL ACTIVATION / REAL LIVE MARKETING"
-subtitle: "The Dutch Salvation Army"
+page_title: TRULY DESTROYED
+label: PR / DIGITAL ACTIVATION / REAL LIVE MARKETING
+subtitle: The Dutch Salvation Army
+hidden: false
 card:
-  label: "PR / 2023"
-  title: "FOR THE DUTCH SALVATION ARMY. TRULY DESTROYED"
-  video: "/assets/video/512236_4cf930026a9247e6a351eef3f093909d.mp4"
-  poster: "/assets/img/512236_4cf930026a9247e6a351eef3f093909df000.jpg"
+  label: PR / 2023
+  title: FOR THE DUTCH SALVATION ARMY. TRULY DESTROYED
+  video: /assets/video/512236_4cf930026a9247e6a351eef3f093909d.mp4
+  poster: /assets/img/512236_4cf930026a9247e6a351eef3f093909df000.jpg
+  soon: false
 ---
-
-{% include vimeo.html id="838250301" %}
+https://www.youtube.com/watch?v=5hvWmroD1x4
 
 <div class="stats"><div><b>0</b><span>MEDIA INVESTMENT</span></div><div><b>+18M</b><span>IMPRESSIONS</span></div><div><b>+1.1M</b><span>EARNED MEDIA</span></div></div>
 
