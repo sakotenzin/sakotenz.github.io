@@ -2,8 +2,11 @@
 title: "ASUS ROG × KOJIMA PRODUCTIONS  "
 label: "Interactive campaign / Online game / Real-world quest / 2026  "
 subtitle: DARE TO BE A TRUE LUDENS_
-description: >2-
-   **A gaming prize. With a campaign you had to play.**
+description: >-
+  https://www.youtube.com/watch?v=H777CldD__k&t=46s
+
+
+  A gaming prize. With a campaign you had to play.
 
   For the launch of the ROG Flow Z13-KJP, we invited fans to step inside the
   collaboration through a dedicated online game inspired by Kojima Productions’
@@ -32,6 +35,7 @@ description: >2-
 
   A product made for those who play deserved an introduction they could play
   too.
+hidden: false
 card:
   label: "Interactive campaign / Online game / Real-world quest / 2026  "
   title: ASUS ROG X KOJIMA PRODUCTION_
