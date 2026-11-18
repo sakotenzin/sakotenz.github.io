@@ -9,6 +9,7 @@ Jekyll portfolio/blog for art director Sako Tenz, migrated from the Wix site htt
 - `_config.yml` — site settings (title, email, description), home filter pills, kramdown options, post defaults.
 - `_posts/YYYY-MM-DD-<slug>.md` — one post per project. Served at `/<slug>/` (`permalink: /:title/`), which keeps the old Wix URLs. Front matter:
   - `title`, `page_title` (optional `<title>`), `label`, `subtitle` (optional), `description` (optional meta)
+  - `hidden` (optional, `true` = card left out of the home grid, page gets `noindex`; page still built so its link works). Not `published: false`: a CMS checkbox defaulting to on could save it as off on older posts.
   - `order` — position in the home grid (smaller first; projects use steps of 10; default 999 = last)
   - `card:` `label`, `title`, then `video` + `poster` (looping preview) or `image` + `width` + `height`; optional `soon: true` (COMING SOON badge)
 - Post body is Markdown with these includes:
