@@ -2,7 +2,7 @@
 title: "Van Leer Foundation: Parent Tech Launch"
 label: SOCIAL CONTENT / TVC
 subtitle: Van Leer Foundation
-hidden: false
+hidden: true
 card:
   label: SOCIAL CONTENT/ TVC / 2026
   title: "Van Leer Foundation: Parent Tech Launch"
