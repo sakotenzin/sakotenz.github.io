@@ -59,4 +59,5 @@ Reference: https://docs.github.com/en/pages/quickstart
 - On save Pages CMS rewrites front matter from the `.pages.yml` fields only and drops undeclared keys (no `settings.content.merge`, so clearing a field works). When adding a front matter key, declare it in `.pages.yml` too. It also re-serializes the YAML, so quoting/comments in front matter and `_data/press.yml` can change.
 - New post filenames are built from the title on save (`filename.field: false`). Never allow an empty slug (`YYYY-MM-DD-.md`): its URL is `/`, and Jekyll writes it over the home page.
 - Home cards fall back to the post `title`/`label` when `card.title`/`card.label` are empty.
+- After pushing a `.pages.yml` change, Pages CMS tabs opened before it still show the old form, and saving from them drops the new keys (happened with About `bio`/`hero_focus`/`hero_image`). Ask Sako to reload Pages CMS after every config push; check `git log -p` on `_data/` after CMS saves.
 - Restart `jekyll serve` after editing `_config.yml`.

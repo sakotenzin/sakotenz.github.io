@@ -11,22 +11,34 @@ data_file: about
   {%- when "lower" -%}{%- assign focus = "75%" -%}
   {%- else -%}{%- assign focus = "25%" -%}
 {%- endcase %}
-<div class="hero">
+<div class="hero{% unless a.hero_image and a.hero_image != "" %} no-photo{% endunless %}">
+  {%- if a.hero_image and a.hero_image != "" %}
   <div class="hero-photo"><img src="{{ a.hero_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.hero_width }}" height="{{ a.hero_height }}" alt="{{ site.data.settings.author | escape }}" style="object-position: 50% {{ focus }}" decoding="async"></div>
+  {%- endif %}
   <div class="hero-text">
     <h1 class="hero-name">{{ a.hero_name | escape | newline_to_br }}</h1>
     {%- if a.bio and a.bio != "" %}
     <div class="hero-bio">{{ a.bio | markdownify }}</div>
     {%- endif %}
-  </div>
-</div>
-<div class="about-head">
-  <div class="contact">
-    <p>{{ a.location | escape | newline_to_br }}</p>
-    <p><a href="mailto:{{ site.data.settings.email }}">{{ site.data.settings.email }}</a></p>
-    {%- if a.linkedin and a.linkedin != "" %}
-    <p><a class="li" href="{{ a.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="{{ a.linkedin_icon | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="201" height="201" alt="LinkedIn" class="icon" loading="lazy" decoding="async"></a></p>
+    {%- if a.awards.size > 0 %}
+    <h2 class="hero-label">{{ a.awards_title }}</h2>
+    <ul class="hero-list">{% for w in a.awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
     {%- endif %}
+    {%- if a.other_awards.size > 0 %}
+    <h3 class="hero-label">{{ a.other_awards_title }}</h3>
+    <ul class="hero-list">{% for w in a.other_awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
+    {%- endif %}
+    <div class="hero-signature">
+      {%- if a.location and a.location != "" %}
+      <p>{{ a.location | escape | newline_to_br }}</p>
+      {%- endif %}
+      {%- if site.data.settings.email and site.data.settings.email != "" %}
+      <p><a href="mailto:{{ site.data.settings.email }}">{{ site.data.settings.email }}</a></p>
+      {%- endif %}
+      {%- if a.linkedin and a.linkedin != "" %}
+      <p><a href="{{ a.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></p>
+      {%- endif %}
+    </div>
   </div>
 </div>
 {%- assign has_exp = false -%}{%- if a.experience.size > 0 -%}{%- assign has_exp = true -%}{%- endif -%}
@@ -44,18 +56,6 @@ data_file: about
     <figure class="trophy"><img src="{{ a.trophy_image | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ a.trophy_width }}" height="{{ a.trophy_height }}" alt="{{ site.data.settings.author | escape }} with awards" loading="lazy" decoding="async">{% if a.trophy_caption and a.trophy_caption != "" %}<figcaption>{{ a.trophy_caption | escape }}</figcaption>{% endif %}</figure>
     {%- endif %}
   </div>
-</section>
-{%- endif %}
-{%- if a.awards.size > 0 or a.other_awards.size > 0 %}
-<section class="awards-band">
-  {%- if a.awards.size > 0 %}
-  <h2 class="section-label">{{ a.awards_title }}</h2>
-  <ul class="awards plain">{% for w in a.awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
-  {%- endif %}
-  {%- if a.other_awards.size > 0 %}
-  <h3 class="section-label small">{{ a.other_awards_title }}</h3>
-  <ul class="awards plain">{% for w in a.other_awards %}<li>{{ w | escape }}</li>{% endfor %}</ul>
-  {%- endif %}
 </section>
 {%- endif %}
 {%- if a.bottom_image and a.bottom_image != "" %}
