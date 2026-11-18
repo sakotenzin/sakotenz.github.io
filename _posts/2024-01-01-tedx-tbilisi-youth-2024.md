@@ -1,7 +1,6 @@
 ---
 title: "TedxTbilisi Youth 2024 // Branding"
 label: "Conceping & Branding / 2024"
-order: 120
 card:
   label: "Conceping & Branding / 2024"
   title: "TedxTbilisi Youth 2024 // Branding_"

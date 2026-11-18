@@ -2,7 +2,6 @@
 title: "TV LOTTERY - VR SET DESIGN CONCEPT"
 page_title: "EUROPEBET"
 label: "TV/ LIVE DESIGN"
-order: 150
 card:
   label: "TV Live / 2023"
   title: "FOR EUROPEBET VR TV LOTTERY"

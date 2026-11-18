@@ -1,7 +1,6 @@
 ---
 title: "ASUS ROG // ROG TRAVEL S2. EPI 4"
 label: "TVC /2025"
-order: 50
 card:
   label: "TVC /2025"
   title: "ASUS ROG // ROG TRAVEL S2. EPI 4_"

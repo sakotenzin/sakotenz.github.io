@@ -35,11 +35,11 @@ content:
       template: "{year}-{month}-{day}-{primary}.md"
       field: false # hidden: built from the title on save, so a post never gets an empty slug (URL / would overwrite the home page)
     view:
-      fields: [title, order]
+      fields: [title, label]
       primary: title
-      sort: [order, title]
+      sort: [title]
       default:
-        sort: order
+        sort: title
         order: asc
     fields:
       - name: title
@@ -62,10 +62,6 @@ content:
       - name: description
         label: Description (for Google / sharing)
         type: text
-      - name: order
-        label: Order on home page
-        type: number
-        description: Smaller number = shown first. Projects use steps of 10 (10, 20, 30...) so a new one can go in between (e.g. 25). Empty = last.
       - name: hidden
         label: Hide from home page
         type: boolean
@@ -118,6 +114,23 @@ content:
           Markdown. Keep the {% include ... %} lines and {: .xxx} lines as they are.
           Image row: {% include row.html media="a.jpg 1920x1280 | b.jpg 800x600" %}
           (bare filenames from Media > Images, with their size). Vimeo: {% include vimeo.html id="123" %}.
+
+  - name: grid
+    label: Home grid order
+    type: file
+    path: _data/grid.yml
+    format: yaml
+    fields:
+      - name: projects
+        label: Projects, top to bottom
+        type: reference
+        list: true
+        options:
+          collection: posts
+          search: title
+          value: "{path}"
+          label: "{title}"
+        description: Drag to reorder. New projects not in this list appear after it, newest first. Hidden projects are skipped.
 
   - name: press
     label: Press cards

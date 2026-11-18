@@ -3,7 +3,6 @@ title: "'TRULY DESTROYED'"
 page_title: "TRULY DESTROYED"
 label: "PR / DIGITAL ACTIVATION / REAL LIVE MARKETING"
 subtitle: "The Dutch Salvation Army"
-order: 20
 card:
   label: "PR / 2023"
   title: "FOR THE DUTCH SALVATION ARMY. TRULY DESTROYED"

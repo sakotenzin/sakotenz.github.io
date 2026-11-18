@@ -2,7 +2,6 @@
 title: "THE CLASSIC THAT SHOULDN'T BE"
 page_title: "BOOK ILLUSTRATION"
 label: "PRINT / ILLUSTRATION"
-order: 140
 card:
   label: "Illustration / Print 2023"
   title: "THE CLASSIC THAT SHOULDN'T BE'FOR AWARDS_ PERSONAL PROJECT"
