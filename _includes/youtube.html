@@ -1,0 +1,25 @@
+{%- comment -%}
+  Created by Vitor Venturin on 18/11/2026.
+  Full-width YouTube player. Usage: {% include youtube.html url="https://www.youtube.com/watch?v=vYGndmE7lPA" %}
+  or {% include youtube.html id="vYGndmE7lPA" %}. Accepts watch?v=, youtu.be/, shorts/, embed/ and live/ links.
+  A YouTube link alone on its own line in a post body is turned into this player by _layouts/post.html.
+{%- endcomment -%}
+{%- assign yt_id = include.id -%}
+{%- if include.url -%}
+  {%- assign yt_url = include.url | strip | replace: "&amp;", "&" -%}
+  {%- if yt_url contains "v=" -%}
+    {%- assign yt_id = yt_url | split: "v=" | last -%}
+  {%- elsif yt_url contains "youtu.be/" -%}
+    {%- assign yt_id = yt_url | split: "youtu.be/" | last -%}
+  {%- elsif yt_url contains "/shorts/" -%}
+    {%- assign yt_id = yt_url | split: "/shorts/" | last -%}
+  {%- elsif yt_url contains "/embed/" -%}
+    {%- assign yt_id = yt_url | split: "/embed/" | last -%}
+  {%- elsif yt_url contains "/live/" -%}
+    {%- assign yt_id = yt_url | split: "/live/" | last -%}
+  {%- endif -%}
+  {%- assign yt_id = yt_id | split: "&" | first | split: "?" | first | split: "#" | first | split: "/" | first -%}
+{%- endif -%}
+{%- if yt_id and yt_id != "" -%}
+<div class="player"><iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id | escape }}?rel=0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Video"></iframe></div>
+{%- endif -%}
