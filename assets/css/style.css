@@ -91,9 +91,10 @@ a.card[href]:hover .card-title { text-decoration: underline; }
 .hero-label { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: .08em; margin: 32px 0 8px; }
 h3.hero-label { font-size: 12px; margin-top: 20px; }
 .hero-list { list-style: none; padding: 0; margin: 0; font-family: var(--mono); font-size: 12px; line-height: 1.6; }
+.hero-list li { list-style: none; }
+.hero-list li::marker { content: none; }
 .hero-signature { margin-top: 32px; font-family: var(--mono); font-size: 13px; }
-.hero-signature p { margin: 0 0 12px; }
-.hero-signature p:last-child { margin-bottom: 0; }
+.hero-signature p { margin: 0; }
 .awards-band { background: var(--band); color: var(--band-fg); padding: 32px 24px; margin-top: 48px; font-family: var(--mono); font-size: 13px; }
 .awards-band .section-label { margin-top: 0; }
 .about-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
