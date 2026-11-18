@@ -115,6 +115,26 @@ content:
           Image row: {% include row.html media="a.jpg 1920x1280 | b.jpg 800x600" %}
           (bare filenames from Media > Images, with their size). Video: paste a YouTube or Vimeo link alone on its own line.
 
+    actions:
+      - name: new-project-from
+        label: New project from this
+        scope: entry
+        workflow: new-project-from.yml
+        ref: current
+        confirm:
+          title: New project from this one
+          message: Copies this project (body, card, video, images) to a new project with the title below. Reload the Projects list after about a minute to see it.
+          button: Create copy
+        fields:
+          - name: title
+            label: Title of the new project
+            type: text
+            required: true
+          - name: hidden
+            label: Keep hidden from the home page until it is ready
+            type: checkbox
+            default: true
+
   - name: grid
     label: Home grid order
     type: file
