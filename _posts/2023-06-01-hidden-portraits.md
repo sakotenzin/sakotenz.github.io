@@ -22,8 +22,6 @@ Together with JCDecaux and Israel Women’s Network we launched ‘Hidden Portra
 ## 'Hidden Portraits’ Fights Years of Vandalism<br>against Women in Jerusalem<br>with Daring Out of Home Campaign'
 {: .statement}
 
-{% include row.html media="512236_f3ff61e4755e4327ade2e3b26a2360b5.png 985x382" %}
-
 ### VANDALISM BEFORE CAMPAIGN / PROBLEM
 {: .section-label}
 
