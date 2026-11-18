@@ -8,4 +8,4 @@ card:
   poster: "/assets/img/512236_c7895dc5e70f4bb4ae4dc34fb2b452d3f000.jpg"
 ---
 
-<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+<!-- Project page not written yet. Add the story here. -->

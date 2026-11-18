@@ -10,4 +10,4 @@ card:
   height: 901
   soon: false
 ---
-<!-- Project page not written yet. Add the story here, then set `link: true`. -->
+<!-- Project page not written yet. Add the story here. -->
