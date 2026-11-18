@@ -32,9 +32,7 @@ description: >2-
 
   A product made for those who play deserved an introduction they could play
   too.
-section: work
-order: 1
-link: false
+order: 30
 card:
   label: "Interactive campaign / Online game / Real-world quest / 2026  "
   title: ASUS ROG X KOJIMA PRODUCTION_

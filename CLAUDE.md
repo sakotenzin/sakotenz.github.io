@@ -6,18 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Jekyll portfolio/blog for art director Sako Tenz, migrated from the Wix site https://sakotvildiani.wixsite.com/my-site-2. GitHub Pages builds it with Jekyll (`github-pages` gem). The Jekyll structure follows Vitor's own portfolio (`vitorventurin.github.io`), but the UI does not: there is no Bootstrap or Freelancer theme here. The look is Sako's own markup + `assets/css/style.css`.
 
-- `_config.yml` — site settings (title, tagline, email, description), home filter pills, `home_sections` (order and grid style of the home sections), kramdown options, post defaults.
+- `_config.yml` — site settings (title, tagline, email, description), home filter pills, kramdown options, post defaults.
 - `_posts/YYYY-MM-DD-<slug>.md` — one post per project. Served at `/<slug>/` (`permalink: /:title/`), which keeps the old Wix URLs. Front matter:
   - `title`, `page_title` (optional `<title>`), `label`, `subtitle` (optional), `description` (optional meta)
-  - `section` (`featured` | `work` | `tedx` | `closing`; default `work`) + `order` (default 99) — where the card sits on the home page
-  - `link` (default `true`; `false` = card is not clickable, the project page is not written yet)
+  - `order` — position in the home grid (smaller first; projects use steps of 10; default 999 = last)
   - `card:` `label`, `title`, then `video` + `poster` (looping preview) or `image` + `width` + `height`; optional `soon: true` (COMING SOON badge)
 - Post body is Markdown with these includes:
   - `{% include row.html media="a.jpg 1920x1280 | b.webp 839x596 Alt text | c.mp4 1920x1080 cf001.jpg" %}` — justified media row (`.row > .cell` with flex/aspect-ratio computed from the dimensions). Video items: file, dimensions, poster.
   - `{% include vimeo.html id="…" %}`, `{% include player.html src="file.mp4" %}`
   - Style hooks via kramdown IAL: `## Text` + `{: .statement}`, `### Text` + `{: .section-label}`, paragraph + `{: .kicker}` / `{: .credits}`, list + `{: .awards}`. Raw HTML is fine for one-offs (`.stats`, `.press`); use `{{ site.baseurl }}/assets/…` for paths in it.
 - `_data/press.yml` — press cards on the home page (external links open in a new tab; paths starting with `/` are internal).
-- `index.html` — home page (loops over `home_sections`); `about-sako.html` — about page (`/about-sako/`).
+- `index.html` — home page: one 2-column grid with every post (same size, all clickable), then the press grid; `about-sako.html` — about page (`/about-sako/`).
 - `_layouts/default.html` (shell), `_layouts/post.html` (project page). `_includes/`: `head`, `header`, `footer`, `card`, `row`, `vimeo`, `player`.
 - `assets/css/style.css` — single shared stylesheet (fonts: Space Mono + Barlow from Google Fonts). Project body elements must stay direct children of `article.project` (CSS uses `.project > p`).
 - `assets/img/`, `assets/video/` — media downloaded from Wix CDN, filenames keep Wix media IDs. `*_c.*` = cropped variant matching the Wix framing. Preview videos are 720p MP4; keep every file under GitHub's 100 MB limit.

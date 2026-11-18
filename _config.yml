@@ -27,22 +27,6 @@ filters:
   - PERSONAL PROJECTS_
   - BRANDING/ CONCEPT_
 
-# Home page sections, top to bottom.
-# `section`: posts whose front matter `section` matches are listed, sorted by `order`.
-# `data`: cards come from _data/<name>.yml instead of posts.
-# `class`: grid style (big = 2 columns, three = 3 columns, press-grid = 4 columns).
-home_sections:
-  - section: featured
-    class: big
-  - section: work
-    class: three
-  - data: press
-    class: press-grid
-  - section: tedx
-    class: three
-  - section: closing
-    class: big
-
 # Build settings
 markdown: kramdown
 kramdown:
@@ -51,7 +35,7 @@ kramdown:
 permalink: pretty
 
 # Posts are projects. Each one is served at /<slug>/ (slug = filename without date),
-# which keeps the old Wix URLs. New posts land in the "work" grid unless told otherwise.
+# which keeps the old Wix URLs. The home grid sorts posts by `order`; posts without one go last.
 defaults:
   - scope:
       path: ""
@@ -59,9 +43,7 @@ defaults:
     values:
       layout: post
       permalink: /:title/
-      section: work
-      order: 99
-      link: true
+      order: 999
 
 # Plugins
 plugins:
