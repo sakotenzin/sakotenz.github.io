@@ -4,7 +4,8 @@
 #
 #  Created by Vitor Venturin on 09/11/2026.
 #
-#  Pages CMS config (https://pagescms.org): browser editor for posts, press cards and media.
+#  Pages CMS config (https://pagescms.org): browser editor for posts, press cards, site settings,
+#  the About page and media.
 #  Edit at https://app.pagescms.org, pick this repo and the `main` branch. Every save is a commit.
 #  Every front matter key must be declared here: on save, Pages CMS rewrites the front matter
 #  from these fields only and drops anything else. Media values are full paths (/assets/img/x.jpg).
@@ -168,7 +169,139 @@ content:
     path: _data/settings.yml
     format: yaml
     fields:
-      - name: tagline
-        label: Tagline (band under the logo)
+      - name: home_title
+        label: Home page browser tab title
         type: string
-        description: Shown on every page, e.g. "A VERY CONCEPTUAL SR. ART DIRECTOR".
+      - name: title_suffix
+        label: Tab title suffix
+        type: string
+        description: Added after the project name in the browser tab, e.g. "GREENFORCE | Sako Tenz Portfolio".
+      - name: description
+        label: Site description (for Google / sharing)
+        type: text
+        description: Used by the home page, and by any page without its own description.
+      - name: author
+        label: Author name
+        type: string
+      - name: email
+        label: Contact email
+        type: string
+        description: Shown in the footer and on the About page.
+      - name: logo
+        label: Logo text (top left)
+        type: string
+      - name: about_button
+        label: About button (top right)
+        type: string
+      - name: tagline
+        label: Tagline (band under the logo, home page)
+        type: string
+      - name: view_all
+        label: Heading above the grid
+        type: string
+      - name: tags
+        label: Tags (pills above the grid)
+        type: string
+        list: true
+        description: Labels only, they are not clickable.
+      - name: contact_label
+        label: Footer contact text
+        type: string
+      - name: back_button
+        label: Back button (bottom of project and About pages)
+        type: string
+
+  - name: about
+    label: About page
+    type: file
+    path: _data/about.yml
+    format: yaml
+    fields:
+      - name: page_title
+        label: Browser tab title
+        type: string
+      - name: description
+        label: Description (for Google / sharing)
+        type: text
+      - name: hero_image
+        label: Top photo
+        type: image
+        options:
+          media: images
+      - name: hero_width
+        label: Top photo width (px)
+        type: number
+      - name: hero_height
+        label: Top photo height (px)
+        type: number
+      - name: hero_name
+        label: Name on the top photo
+        type: text
+        description: One line per row.
+      - name: location
+        label: Location
+        type: text
+        description: One line per row.
+      - name: linkedin
+        label: LinkedIn link
+        type: string
+        description: Leave empty to hide the LinkedIn icon.
+      - name: linkedin_icon
+        label: LinkedIn icon
+        type: image
+        options:
+          media: images
+      - name: experience_title
+        label: Work experience heading
+        type: string
+      - name: experience
+        label: Work experience
+        type: object
+        list: true
+        fields:
+          - name: when
+            label: Dates and role
+            type: string
+          - name: where
+            label: Company / place
+            type: text
+            description: One line per row.
+      - name: trophy_image
+        label: Side photo
+        type: image
+        options:
+          media: images
+      - name: trophy_width
+        label: Side photo width (px)
+        type: number
+      - name: trophy_height
+        label: Side photo height (px)
+        type: number
+      - name: trophy_caption
+        label: Side photo caption
+        type: string
+      - name: awards_title
+        label: Awards heading
+        type: string
+      - name: awards
+        label: Awards
+        type: string
+        list: true
+      - name: other_awards_title
+        label: Other awards heading
+        type: string
+      - name: other_awards
+        label: Other awards
+        type: string
+        list: true
+      - name: bottom_image
+        label: Bottom photo
+        type: image
+        options:
+          media: images
+      - name: bottom_width
+        label: Bottom photo width (px)
+        type: number
+      - name: bottom_height
+        label: Bottom photo height (px)
+        type: number

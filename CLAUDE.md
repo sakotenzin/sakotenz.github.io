@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Jekyll portfolio/blog for art director Sako Tenz, migrated from the Wix site https://sakotvildiani.wixsite.com/my-site-2. GitHub Pages builds it with Jekyll (`github-pages` gem). The Jekyll structure follows Vitor's own portfolio (`vitorventurin.github.io`), but the UI does not: there is no Bootstrap or Freelancer theme here. The look is Sako's own markup + `assets/css/style.css`.
 
-- `_config.yml` — site settings (title, email, description), home filter pills, kramdown options, post defaults.
+- `_config.yml` — build settings only: `title`/`description` (RSS feed; without `description` jekyll-github-metadata calls the GitHub API and the local build fails), kramdown options, post defaults. No visible site text here.
 - `_posts/YYYY-MM-DD-<slug>.md` — one post per project. Served at `/<slug>/` (`permalink: /:title/`), which keeps the old Wix URLs. Front matter:
   - `title`, `page_title` (optional `<title>`), `label`, `subtitle` (optional), `description` (optional meta)
   - `hidden` (optional, `true` = card left out of the home grid, page gets `noindex`; page still built so its link works). Not `published: false`: a CMS checkbox defaulting to on could save it as off on older posts.
@@ -16,9 +16,10 @@ Jekyll portfolio/blog for art director Sako Tenz, migrated from the Wix site htt
   - `{% include row.html media="a.jpg 1920x1280 | b.webp 839x596 Alt text | c.mp4 1920x1080 cf001.jpg" %}` — justified media row (`.row > .cell` with flex/aspect-ratio computed from the dimensions). Video items: file, dimensions, poster.
   - `{% include vimeo.html id="…" %}`, `{% include player.html src="file.mp4" %}`
   - Style hooks via kramdown IAL: `## Text` + `{: .statement}`, `### Text` + `{: .section-label}`, paragraph + `{: .kicker}` / `{: .credits}`, list + `{: .awards}`. Raw HTML is fine for one-offs (`.stats`, `.press`); use `{{ site.baseurl }}/assets/…` for paths in it.
-- `_data/settings.yml` — site texts Sako edits in Pages CMS (`tagline`, the band under the logo). Not in `_config.yml`: Pages CMS would rewrite that file and drop undeclared keys.
+- `_data/settings.yml` — every shared site text, edited in Pages CMS (Site settings): home tab title, tab-title suffix, site description, author, email, logo text, About button, tagline, grid heading, `tags` (home pills, not clickable), footer contact text, back button. Templates read `site.data.settings.*`. Not in `_config.yml`: Pages CMS would rewrite that file and drop undeclared keys.
+- `_data/about.yml` — all About page content (photos + sizes, name, location, LinkedIn, experience list, awards lists, caption). Multi-line text fields render one line per row (`newline_to_br`).
 - `_data/press.yml` — press cards on the home page (external links open in a new tab; paths starting with `/` are internal).
-- `index.html` — home page: one 2-column grid with every post (same size, all clickable), then the press grid; `about-sako.html` — about page (`/about-sako/`).
+- `index.html` — home page: one 2-column grid with every post (same size, all clickable), then the press grid; `about-sako.html` — about page (`/about-sako/`), a template over `_data/about.yml`. Its front matter `data_file: about` makes `head.html` take the tab title/description from that data file.
 - `_layouts/default.html` (shell), `_layouts/post.html` (project page). `_includes/`: `head`, `header`, `footer`, `card`, `row`, `vimeo`, `player`.
 - `assets/css/style.css` — single shared stylesheet (fonts: Space Mono + Barlow from Google Fonts). Project body elements must stay direct children of `article.project` (CSS uses `.project > p`).
 - `assets/img/`, `assets/video/` — media downloaded from Wix CDN, filenames keep Wix media IDs. `*_c.*` = cropped variant matching the Wix framing. Preview videos are 720p MP4; keep every file under GitHub's 100 MB limit.
@@ -51,7 +52,7 @@ Reference: https://docs.github.com/en/pages/quickstart
 
 ## Online editing (Pages CMS)
 
-- Sako edits online at https://app.pagescms.org (GitHub login), branch `main`. Config: `.pages.yml` (projects collection, `_data/press.yml`, `_data/settings.yml`, media folders `assets/img` + `assets/video`).
+- Sako edits online at https://app.pagescms.org (GitHub login), branch `main`. Config: `.pages.yml` (projects collection, `_data/press.yml`, `_data/settings.yml`, `_data/about.yml`, media folders `assets/img` + `assets/video`).
 - Front matter media values (`card.video/poster/image`, press `image/logo`) must be full paths (`/assets/img/x.jpg`, `/assets/video/x.mp4`): Pages CMS refuses to save a post whose image value doesn't start with the media folder. `card.html`/`head.html` strip the prefix before adding their own, so bare filenames also render. Media inside the body (`row.html`, `player.html`) stays bare filenames.
 - Post body uses the raw markdown code editor (not rich-text) so `{% include %}` and `{: .class}` lines survive saves.
 - On save Pages CMS rewrites front matter from the `.pages.yml` fields only and drops undeclared keys (no `settings.content.merge`, so clearing a field works). When adding a front matter key, declare it in `.pages.yml` too. It also re-serializes the YAML, so quoting/comments in front matter and `_data/press.yml` can change.
