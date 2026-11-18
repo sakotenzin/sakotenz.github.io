@@ -6,15 +6,18 @@
   File values may be a bare filename or a full /assets/... path (Pages CMS writes the latter).
     image + width/height  still image (assets/img)
   optional: soon (true = "COMING SOON" badge), logo + logo_width/logo_height/logo_alt (overlay logo)
+  include.title / include.label: fallbacks when the card has no title/label (posts pass their own).
   include.href: link target (omit for a non-clickable card); include.external: open in new tab.
 {%- endcomment -%}
 {%- assign c = include.card -%}
+{%- assign card_label = c.label | default: include.label -%}
+{%- assign card_title = c.title | default: include.title -%}
 {%- if include.href -%}
 <a class="card" href="{{ include.href }}"{% if include.external %} target="_blank" rel="noopener"{% endif %}>
 {%- else -%}
 <div class="card">
 {%- endif -%}
-<p class="card-label">{% if c.label and c.label != "" %}{{ c.label | escape }}{% else %}&nbsp;{% endif %}</p><div class="media">
+<p class="card-label">{% if card_label and card_label != "" %}{{ card_label | escape }}{% else %}&nbsp;{% endif %}</p><div class="media">
 {%- if c.video -%}
 <video class="loop" src="{{ c.video | remove_first: '/assets/video/' | prepend: '/assets/video/' | relative_url }}" poster="{{ c.poster | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" autoplay muted loop playsinline preload="metadata"></video>
 {%- elsif c.image -%}
@@ -24,5 +27,5 @@
 <img src="{{ c.logo | remove_first: '/assets/img/' | prepend: '/assets/img/' | relative_url }}" width="{{ c.logo_width }}" height="{{ c.logo_height }}" alt="{{ c.logo_alt | escape }}" class="overlay-logo" loading="lazy" decoding="async">
 {%- endif -%}
 {%- if c.soon -%}<span class="soon">COMING SOON</span>{%- endif -%}
-</div><h2 class="card-title">{{ c.title }}</h2>
+</div><h2 class="card-title">{{ card_title }}</h2>
 {%- if include.href -%}</a>{%- else -%}</div>{%- endif %}
