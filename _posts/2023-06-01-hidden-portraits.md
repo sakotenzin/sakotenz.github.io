@@ -1,16 +1,17 @@
 ---
 title: "'Hidden Portraits'"
-page_title: "HIDDEN PORTRAITS"
-label: "OOH / REAL TIME MARKETING / PR"
-subtitle: "Israel Women's Network X JCDecaux Israel"
+page_title: HIDDEN PORTRAITS
+label: OOH / REAL TIME MARKETING / PR
+subtitle: Israel Women's Network X JCDecaux Israel
+hidden: false
 card:
-  label: "OOH / 2023"
-  title: "FOR JCDecaux AND ISRAEL WOMEN'S NETWORK. 'HIDDEN PORTRAITS'"
-  video: "/assets/video/512236_ffeb678e86b846d98e9d9e504b389912.mp4"
-  poster: "/assets/img/512236_ffeb678e86b846d98e9d9e504b389912f001.jpg"
+  label: OOH / 2023
+  title: FOR JCDecaux AND ISRAEL WOMEN'S NETWORK. 'HIDDEN PORTRAITS'
+  video: /assets/video/512236_ffeb678e86b846d98e9d9e504b389912.mp4
+  poster: /assets/img/512236_ffeb678e86b846d98e9d9e504b389912f001.jpg
+  soon: false
 ---
-
-{% include vimeo.html id="831532022" %}
+https://www.youtube.com/watch?v=IoZNxeria7E
 
 For more than a decade, religious extremists in Jerusalem have been defacing women’s faces from outdoor media. Their faces have been spray painted, scratched out and even burned down.
 
