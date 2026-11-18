@@ -32,7 +32,7 @@ content:
     format: yaml-frontmatter
     filename:
       template: "{year}-{month}-{day}-{primary}.md"
-      field: create
+      field: false # hidden: built from the title on save, so a post never gets an empty slug (URL / would overwrite the home page)
     view:
       fields: [title, section, order]
       primary: title

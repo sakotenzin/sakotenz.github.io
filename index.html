@@ -23,9 +23,9 @@ layout: default
 {%- for post in posts %}
 {%- if post.link %}
 {%- assign href = post.url | relative_url %}
-{% include card.html card=post.card href=href %}
+{% include card.html card=post.card href=href title=post.title label=post.label %}
 {%- else %}
-{% include card.html card=post.card %}
+{% include card.html card=post.card title=post.title label=post.label %}
 {%- endif %}
 {%- endfor %}
 {%- endif %}
