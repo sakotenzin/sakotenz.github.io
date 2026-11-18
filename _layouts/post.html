@@ -4,9 +4,27 @@ layout: default
 {%- comment -%}
   Created by Vitor Venturin on 07/11/2026.
   Project page. Front matter: label, title, subtitle (optional). Body = post content.
+  A paragraph holding only a YouTube or Vimeo link (pasted on its own line) becomes a full-width player.
 {%- endcomment -%}
 <article class="project">
 <p class="label">{{ page.label }}</p><h1 class="title">{{ page.title }}</h1>{% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
-{{ content }}
+{%- assign parts = content | split: "<p>" %}
+{%- for part in parts %}
+{%- if forloop.first %}{{ part }}{% continue %}{% endif %}
+{%- assign para = part | split: "</p>" | first %}
+{%- assign link = para | strip %}
+{%- assign scheme = link | split: "://" | first %}
+{%- assign embed = "" %}
+{%- if scheme == "https" or scheme == "http" %}{% unless link contains " " or link contains "<" %}
+{%- if link contains "youtube.com/" or link contains "youtu.be/" %}{% assign embed = "youtube" %}
+{%- elsif link contains "vimeo.com/" %}{% assign embed = "vimeo" %}{% endif %}
+{%- endunless %}{% endif %}
+{%- if embed == "youtube" %}
+{% include youtube.html url=link %}{{ part | remove_first: para | remove_first: "</p>" }}
+{%- elsif embed == "vimeo" %}
+{%- assign vimeo_id = link | split: "vimeo.com/" | last | remove_first: "video/" | split: "/" | first | split: "?" | first %}
+{% include vimeo.html id=vimeo_id %}{{ part | remove_first: para | remove_first: "</p>" }}
+{%- else %}<p>{{ part }}{% endif %}
+{%- endfor %}
 <a class="pill back" href="{{ '/' | relative_url }}">{{ site.data.settings.back_button }}</a>
 </article>

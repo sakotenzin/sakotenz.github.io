@@ -113,7 +113,7 @@ content:
         description: >-
           Markdown. Keep the {% include ... %} lines and {: .xxx} lines as they are.
           Image row: {% include row.html media="a.jpg 1920x1280 | b.jpg 800x600" %}
-          (bare filenames from Media > Images, with their size). Vimeo: {% include vimeo.html id="123" %}.
+          (bare filenames from Media > Images, with their size). Video: paste a YouTube or Vimeo link alone on its own line.
 
   - name: grid
     label: Home grid order

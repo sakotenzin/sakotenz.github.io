@@ -13,14 +13,15 @@ Jekyll portfolio/blog for art director Sako Tenz, migrated from the Wix site htt
   - `card:` `label`, `title`, then `video` + `poster` (looping preview) or `image` + `width` + `height`; optional `soon: true` (COMING SOON badge)
 - Post body is Markdown with these includes:
   - `{% include row.html media="a.jpg 1920x1280 | b.webp 839x596 Alt text | c.mp4 1920x1080 cf001.jpg" %}` — justified media row (`.row > .cell` with flex/aspect-ratio computed from the dimensions). Video items: file, dimensions, poster.
-  - `{% include vimeo.html id="…" %}`, `{% include player.html src="file.mp4" %}`
+  - `{% include vimeo.html id="…" %}`, `{% include youtube.html url="…" %}` (or `id=`), `{% include player.html src="file.mp4" %}`
+  - A YouTube or Vimeo link alone on its own line (its own paragraph) becomes a full-width player: `_layouts/post.html` splits `content` on `<p>` and swaps bare-link paragraphs for the include. Links inside a sentence stay text.
   - Style hooks via kramdown IAL: `## Text` + `{: .statement}`, `### Text` + `{: .section-label}`, paragraph + `{: .kicker}` / `{: .credits}`, list + `{: .awards}`. Raw HTML is fine for one-offs (`.stats`, `.press`); use `{{ site.baseurl }}/assets/…` for paths in it.
 - `_data/settings.yml` — every shared site text, edited in Pages CMS (Site settings): home tab title, tab-title suffix, site description, author, email, logo text, About button, tagline, grid heading, `tags` (home pills, not clickable), footer contact text, back button. Templates read `site.data.settings.*`. Not in `_config.yml`: Pages CMS would rewrite that file and drop undeclared keys.
 - `_data/about.yml` — all About page content (photos + sizes, `hero_focus` = face height in the square-cropped header photo, name, `bio` (Markdown), location, LinkedIn, experience list, awards lists, caption). Multi-line text fields render one line per row (`newline_to_br`).
 - `_data/grid.yml` — home grid order: `projects` = list of post paths (`_posts/<file>.md`), a Pages CMS `reference` list Sako drag-sorts. Matched on file name. Posts not listed follow, newest first; `hidden` posts are skipped. Renaming a post file means updating its entry here.
 - `_data/press.yml` — press cards on the home page (external links open in a new tab; paths starting with `/` are internal).
 - `index.html` — home page: one 2-column grid with every post (same size, all clickable), then the press grid; `about-sako.html` — about page (`/about-sako/`), a template over `_data/about.yml`. Its front matter `data_file: about` makes `head.html` take the tab title/description from that data file.
-- `_layouts/default.html` (shell), `_layouts/post.html` (project page). `_includes/`: `head`, `header`, `footer`, `card`, `row`, `vimeo`, `player`.
+- `_layouts/default.html` (shell), `_layouts/post.html` (project page). `_includes/`: `head`, `header`, `footer`, `card`, `row`, `vimeo`, `youtube`, `player`.
 - `assets/css/style.css` — single shared stylesheet (fonts: Space Mono + Barlow from Google Fonts). Project body elements must stay direct children of `article.project` (CSS uses `.project > p`).
 - `assets/img/`, `assets/video/` — media downloaded from Wix CDN, filenames keep Wix media IDs. `*_c.*` = cropped variant matching the Wix framing. Preview videos are 720p MP4; keep every file under GitHub's 100 MB limit.
 - Full-length videos for hidden-portraits, make-room-4-love and truly-destroyed are Vimeo embeds (IDs 831532022, 798723245, 838250301) that are domain-restricted on Vimeo; they only play once the Vimeo owner allows the GitHub Pages domain.
