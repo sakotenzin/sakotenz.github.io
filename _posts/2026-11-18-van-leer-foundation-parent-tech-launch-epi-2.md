@@ -18,7 +18,8 @@ In a world full of AI Assistants and promises of the next big tech breakthroughs
 ## When machines do it we call it inteligence<br>When Parents do it we call it parenting
 {: .statement}
 
-vlf-parent-launch-kv-3000x1687-film2.jpg
+
+{% include row.html media="vlf-parent-launch-kv-3000x1687-film2.jpg 1920x1021 LoisCohen-Greenforce" %}
 
 So, during one of the biggest tech launch periods of the year, we helped Van Leer Foundation unveil the original smart assistant: parents.
 Featuring the voices of Hala Hanna and Chris Duffy. We launched video, webiste and partnership with KLM.
