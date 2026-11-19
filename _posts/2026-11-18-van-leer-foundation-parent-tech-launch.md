@@ -24,7 +24,7 @@ In a world full of AI Assistants and promises of the next big tech breakthroughs
 So, during one of the biggest tech launch periods of the year, we helped Van Leer Foundation unveil the original smart assistant: parents.
 Featuring the voices of Hala Hanna and Chris Duffy. We launched video, webiste and partnership with KLM.
 
-<div class="press" style="background-color: #000; display: flex; justify-content: center; align-items: center; padding: 80px 20px;"><a href="https://lbbonline.com/work/182066" target="_blank" rel="noopener"><img src="{{ site.baseurl }}/assets/img/5b77be269cb14cce1.jpg" width="350" height="auto" alt="Little Black Book" class="logo-img" loading="lazy" decoding="async" style="max-width: 100%; height: auto;"></a></div>
+<div class="press" style="background-color: #000; width: 100%; min-height: 500px; display: flex; justify-content: center; align-items: center;"><a href="https://lbbonline.com/work/182066" target="_blank" rel="noopener"><img src="{{ site.baseurl }}/assets/img/5b77be269cb14cce1.jpg" width="1920" height="504" alt="Little Black Book" class="logo-img" loading="lazy" decoding="async" style="width: 100%; max-width: 1920px; height: auto;"></a></div>
 
 Concept/Art Director & Copywriter: Sako Tvildiani<br>Agency: SuperHeroes, Amsterdam, NL.
 {: .credits}
